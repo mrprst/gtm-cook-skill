@@ -1,0 +1,36 @@
+{
+  "source": "job_board",
+  "match": {
+    "column": "company_url",
+    "on": "domain"
+  },
+  "date": {
+    "column": "posted_on",
+    "formats": [
+      "%d/%m/%Y"
+    ]
+  },
+  "rules": [
+    {
+      "signal_type": "hiring_surge",
+      "aggregate": {
+        "window_days": 30,
+        "min_count": 4
+      }
+    },
+    {
+      "signal_type": "finance_role_posted",
+      "when": [
+        {
+          "column": "job_title",
+          "op": "in",
+          "value": [
+            "Controller",
+            "FP&A Manager",
+            "Finance Operations Manager"
+          ]
+        }
+      ]
+    }
+  ]
+}

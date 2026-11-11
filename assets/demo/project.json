@@ -1,0 +1,7 @@
+{
+  "mode": "demo",
+  "product": "Spend management software for finance teams (fictional company: Ledgerline)",
+  "buying_moment": "A finance team grows fast and approvals by email stop scaling",
+  "icp": {"employees_min": 50, "employees_max": 5000, "industries": [], "countries": []},
+  "exclusions": {"exclude_customers": true, "exclude_blocked": true, "require_domain": true}
+}

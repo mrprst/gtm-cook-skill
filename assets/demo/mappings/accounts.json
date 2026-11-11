@@ -1,0 +1,40 @@
+{
+  "columns": {
+    "account_id": "Account ID",
+    "account_name": "Account Name",
+    "domain": "Website",
+    "employees": "Employees",
+    "industry": "Industry",
+    "country": "Billing Country"
+  },
+  "flags": {
+    "is_customer": [
+      {
+        "column": "Type",
+        "op": "eq",
+        "value": "Customer"
+      }
+    ],
+    "is_blocked": [
+      {
+        "column": "Do Not Call",
+        "op": "eq",
+        "value": "Yes"
+      }
+    ],
+    "has_contact_email": [
+      {
+        "column": "Contacts With Email",
+        "op": "gte",
+        "value": 1
+      }
+    ],
+    "owned_by_ae": [
+      {
+        "column": "Account Owner Role",
+        "op": "eq",
+        "value": "AE"
+      }
+    ]
+  }
+}

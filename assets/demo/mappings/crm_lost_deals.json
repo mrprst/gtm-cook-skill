@@ -1,0 +1,25 @@
+{
+  "source": "crm",
+  "match": {
+    "column": "Account ID",
+    "on": "account_id"
+  },
+  "date": {
+    "column": "Close Date",
+    "formats": [
+      "%Y-%m-%d"
+    ]
+  },
+  "rules": [
+    {
+      "signal_type": "lost_deal",
+      "when": [
+        {
+          "column": "Opportunity Stage",
+          "op": "eq",
+          "value": "Closed Lost"
+        }
+      ]
+    }
+  ]
+}

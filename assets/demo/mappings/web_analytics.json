@@ -1,0 +1,35 @@
+{
+  "source": "web_analytics",
+  "match": {
+    "column": "company_domain",
+    "on": "domain"
+  },
+  "date": {
+    "column": "event_date",
+    "formats": [
+      "%Y-%m-%d"
+    ]
+  },
+  "rules": [
+    {
+      "signal_type": "website_visit",
+      "when": [
+        {
+          "column": "event",
+          "op": "eq",
+          "value": "website_visit"
+        }
+      ]
+    },
+    {
+      "signal_type": "content_engagement",
+      "when": [
+        {
+          "column": "event",
+          "op": "eq",
+          "value": "content_engagement"
+        }
+      ]
+    }
+  ]
+}

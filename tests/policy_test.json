@@ -1,0 +1,98 @@
+{
+  "version": "test",
+  "notes": "Test policy: crm_import capped at 5 so the same-date tie on acc_041 shows in the score.",
+  "exclusions": {
+    "exclude_customers": true,
+    "exclude_blocked": true,
+    "require_domain": true
+  },
+  "icp": {
+    "employees_min": 50,
+    "employees_max": 5000,
+    "industries": [],
+    "countries": []
+  },
+  "signals": {
+    "funding_round": {
+      "family": "company_event",
+      "weight": 30,
+      "half_life_days": 60,
+      "max_age_days": 180
+    },
+    "leadership_change": {
+      "family": "people",
+      "weight": 25,
+      "half_life_days": 90,
+      "max_age_days": 180
+    },
+    "champion_move": {
+      "family": "people",
+      "weight": 35,
+      "half_life_days": 60,
+      "max_age_days": 120
+    },
+    "hiring_surge": {
+      "family": "hiring",
+      "weight": 20,
+      "half_life_days": 30,
+      "max_age_days": 90,
+      "value_scale": {
+        "min": 5,
+        "max": 30
+      }
+    },
+    "expansion": {
+      "family": "company_event",
+      "weight": 15,
+      "half_life_days": 90,
+      "max_age_days": 180
+    },
+    "website_visit": {
+      "family": "intent",
+      "weight": 15,
+      "half_life_days": 7,
+      "max_age_days": 30
+    },
+    "content_engagement": {
+      "family": "intent",
+      "weight": 10,
+      "half_life_days": 14,
+      "max_age_days": 45
+    },
+    "lost_deal": {
+      "family": "negative",
+      "weight": -25,
+      "half_life_days": 120,
+      "max_age_days": 365
+    }
+  },
+  "caps": {
+    "per_source": {
+      "crm_import": 5
+    },
+    "default_source_cap": 50,
+    "per_family": {
+      "intent": 20
+    },
+    "default_family_cap": 40
+  },
+  "routing": {
+    "sdrs": [
+      "SDR A",
+      "SDR B"
+    ],
+    "accounts_per_sdr": 5,
+    "cooldown_days": 30,
+    "min_score": 12,
+    "require_true": [
+      "has_contact_email"
+    ],
+    "exclude_if_true": [
+      "owned_by_ae"
+    ],
+    "skip_weekdays": [
+      6,
+      7
+    ]
+  }
+}

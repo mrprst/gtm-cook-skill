@@ -1,0 +1,95 @@
+{
+  "signals": [
+    {
+      "signal_type": "funding_round",
+      "direction": "positive",
+      "kind": "binary",
+      "family": "company_event",
+      "why": "New money means more spend to control and new reporting duties",
+      "source": "enrichment_api",
+      "refresh_days": 7
+    },
+    {
+      "signal_type": "leadership_change",
+      "direction": "positive",
+      "kind": "binary",
+      "family": "people",
+      "why": "A new CFO or finance leader reviews tools in the first months",
+      "source": "enrichment_api",
+      "refresh_days": 7
+    },
+    {
+      "signal_type": "champion_move",
+      "direction": "positive",
+      "kind": "binary",
+      "family": "people",
+      "why": "A past user joins a new company and brings the habit",
+      "source": "enrichment_api",
+      "refresh_days": 7
+    },
+    {
+      "signal_type": "hiring_surge",
+      "direction": "positive",
+      "kind": "valued",
+      "family": "hiring",
+      "why": "A finance team growing fast is when approvals by email stop scaling",
+      "source": "job_board",
+      "refresh_days": 7,
+      "value_unit": "job postings in the last 30 days"
+    },
+    {
+      "signal_type": "finance_role_posted",
+      "direction": "positive",
+      "kind": "binary",
+      "family": "hiring",
+      "why": "A new controller or FP&A role often means finance processes are being rebuilt",
+      "source": "job_board",
+      "refresh_days": 7
+    },
+    {
+      "signal_type": "expansion",
+      "direction": "positive",
+      "kind": "binary",
+      "family": "company_event",
+      "why": "New entities and countries multiply the spend to control",
+      "source": "enrichment_api",
+      "refresh_days": 7
+    },
+    {
+      "signal_type": "website_visit",
+      "direction": "positive",
+      "kind": "binary",
+      "family": "intent",
+      "why": "They are already looking at us",
+      "source": "web_analytics",
+      "refresh_days": 1
+    },
+    {
+      "signal_type": "content_engagement",
+      "direction": "positive",
+      "kind": "binary",
+      "family": "intent",
+      "why": "Weak interest, worth a nudge only with other signals",
+      "source": "web_analytics",
+      "refresh_days": 1
+    },
+    {
+      "signal_type": "lost_deal",
+      "direction": "negative",
+      "kind": "binary",
+      "family": "negative",
+      "why": "Calling again within months of a loss usually backfires",
+      "source": "crm",
+      "refresh_days": 7
+    },
+    {
+      "signal_type": "tech_change",
+      "direction": "positive",
+      "kind": "binary",
+      "family": "tech",
+      "why": "Dropping their expense tool opens a window",
+      "source": "not_sourced",
+      "refresh_days": 30
+    }
+  ]
+}

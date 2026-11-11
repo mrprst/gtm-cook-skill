@@ -1,0 +1,55 @@
+{
+  "source": "enrichment_api",
+  "match": {
+    "column": "company_domain",
+    "on": "domain"
+  },
+  "date": {
+    "column": "event_date",
+    "formats": [
+      "%Y-%m-%d"
+    ]
+  },
+  "rules": [
+    {
+      "signal_type": "funding_round",
+      "when": [
+        {
+          "column": "event",
+          "op": "eq",
+          "value": "funding_round"
+        }
+      ]
+    },
+    {
+      "signal_type": "leadership_change",
+      "when": [
+        {
+          "column": "event",
+          "op": "eq",
+          "value": "leadership_change"
+        }
+      ]
+    },
+    {
+      "signal_type": "champion_move",
+      "when": [
+        {
+          "column": "event",
+          "op": "eq",
+          "value": "champion_move"
+        }
+      ]
+    },
+    {
+      "signal_type": "expansion",
+      "when": [
+        {
+          "column": "event",
+          "op": "eq",
+          "value": "expansion"
+        }
+      ]
+    }
+  ]
+}
